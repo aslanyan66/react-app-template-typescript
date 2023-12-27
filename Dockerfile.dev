@@ -1,0 +1,11 @@
+FROM node:16-alpine
+
+# Set the working directory
+WORKDIR /app
+COPY ./package.json /app/
+RUN yarn install
+
+COPY . /app/
+
+# Expose the development server port
+EXPOSE 3000
